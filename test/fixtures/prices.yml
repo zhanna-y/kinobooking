@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time_interval: 2015-11-10 15:56:25
+  cinema_id: 1
+  value: 1
+  movie_id: 1
+
+two:
+  time_interval: 2015-11-10 15:56:25
+  cinema_id: 1
+  value: 1
+  movie_id: 1

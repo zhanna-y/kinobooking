@@ -14,7 +14,8 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
-    @booking = Booking.new
+    @price = Seance.find_by(params[:movie_format], params[:time_interval])
+    @booking = Seance.find(params[:seance_id]).bookings.build
   end
 
   # GET /bookings/1/edit

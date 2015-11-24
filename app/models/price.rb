@@ -1,3 +1,3 @@
 class Price < ActiveRecord::Base
-  belongs_to :seance
+  belongs_to :booking
 end

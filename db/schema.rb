@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118143150) do
+ActiveRecord::Schema.define(version: 20151125133733) do
 
   create_table "bookings", force: :cascade do |t|
     t.datetime "date"
@@ -44,11 +44,12 @@ ActiveRecord::Schema.define(version: 20151118143150) do
   end
 
   create_table "prices", force: :cascade do |t|
-    t.datetime "time_interval"
     t.integer  "value"
     t.integer  "movie_format"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "seances", force: :cascade do |t|

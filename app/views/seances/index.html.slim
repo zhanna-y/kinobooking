@@ -1,0 +1,22 @@
+div.col-md-12
+  p#notice = notice
+
+  h1 Listing Seances
+
+  table width="50%"
+    thead
+      tr
+        th Date
+        th Time
+        th Cinema_id
+        th Movie_id
+        th Hall_id
+
+   tbody
+     - @seances.each do |seance|
+       tr
+         td = seance.date.strftime("%d: %m: %Y")
+         td = seance.time.strftime("%R")
+         td = seance.cinema_id
+         td = seance.movie_id
+         td = seance.hall_id

@@ -14,8 +14,8 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
-    @price = Seance.find_by(params[:movie_format], params[:time_interval])
     @booking = Seance.find(params[:seance_id]).bookings.build
+    @price = Price.where("start_time >= ? AND end_time < ?", @booking.seance.time, @booking.seance.time).where(movie_format: @booking.seance.movie.format)
   end
 
   # GET /bookings/1/edit

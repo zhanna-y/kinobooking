@@ -1,0 +1,14 @@
+.col-md-12
+  p#notice = notice
+
+   h1 Listing Cinemas
+
+  table.table.table-striped.table-bordered style="width:50%"
+    thead
+      tr
+        th Title
+    tbody
+      - @cinemas.each do |cinema|
+        tr
+          td = link_to cinema.title, cinema
+

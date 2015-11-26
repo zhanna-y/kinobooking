@@ -1,0 +1,27 @@
+div.col-md-12
+  p id="notice" = notice
+
+  h1
+    ' Booking
+    = @seance.movie.title
+
+  table.table.table-striped.table-bordered style="width:50%"
+    thead
+      tr
+        th Date
+        th Time
+        th Cinema_id
+        th Movie_id
+        th Hall_id
+    tr
+      td = @seance.date.strftime("%d: %m: %Y")
+      td = @seance.time.strftime("%R")
+      td = @seance.cinema_id
+      td = @seance.movie_id
+      td = @seance.hall_id
+
+  = link_to 'Book', new_seance_booking_path(@seance), class: 'btn btn-primary'
+  | &nbsp;|&nbsp;
+  = link_to 'Back', movie_path(@seance.movie_id), class: 'btn btn-primary'
+
+

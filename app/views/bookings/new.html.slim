@@ -1,0 +1,54 @@
+div.col-md-12
+  h1 New Booking
+
+  table.table.table-striped.table-bordered style="width: 50%"
+    tbody
+      tr
+        td = @booking.seance.movie.title
+        td = @booking.seance.movie.format
+      tr
+        td Date
+        td = @booking.seance.date.strftime("%d: %m: %Y")
+      tr
+        td Time
+        td = @booking.seance.time.strftime("%R")
+      tr
+        td Cinema_id
+        td = @booking.seance.cinema_id
+      tr
+        td Movie_id
+        td = @booking.seance.movie_id
+      tr
+        td Hall_id
+        td = @booking.seance.hall_id
+      tr
+        td Value
+        td = @booking.price.value
+      tr
+        td Seat
+        td
+          select
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+            option 6
+            option 7
+            option 8
+            option 9
+            option 10
+            option 11
+            option 15
+            option 16
+            option 17
+            option 18
+            option 19
+            option 20
+
+  /= render 'form'
+  = link_to 'Купить', root_path, class: 'btn btn-primary'
+
+  ' &nbsp;
+
+  = link_to 'Back', seance_path(@booking.seance_id), class: 'btn btn-primary'

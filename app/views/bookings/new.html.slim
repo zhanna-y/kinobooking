@@ -23,7 +23,11 @@ div.col-md-12
         td = @booking.seance.hall_id
       tr
         td Value
-        td = @booking.price.value
+        td
+          ul
+            li = @price.start_time.strftime("%R")
+            li = @price.end_time.strftime("%R")
+            li = @price.value
       tr
         td Seat
         td

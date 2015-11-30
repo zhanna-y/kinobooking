@@ -15,10 +15,10 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @booking = Seance.find(params[:seance_id]).bookings.build
-    if @booking.seance.time.strftime("%R") == "00:00"
+    if @booking.seance.time.strftime("%R") == "22:00" && @booking.seance.time.strftime("%R") >= "22:59"
       @price = Price.where(movie_format: @booking.seance.movie.format).first
     else
-      @price = Price.where("TIME(start_time) <= TIME(?) AND TIME(end_time) > TIME(?)", @booking.seance.time, @booking.seance.time).where(movie_format: @booking.seance.movie.format).first
+      @price = Price.where("'00:00' <= TIME(?) AND TIME(end_time) > TIME(?)", @booking.seance.time, @booking.seance.time).where(movie_format: @booking.seance.movie.format).first
     end
   end
 
